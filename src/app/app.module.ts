@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -23,7 +23,8 @@ import { CreatePlayerComponent } from './soccer-components/create-player/create-
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    ReactiveFormsModule // Form listener for changes (https://scotch.io/tutorials/using-angular-2s-model-driven-forms-with-formgroup-and-formcontrol)
   ],
   providers: [],
   bootstrap: [AppComponent]

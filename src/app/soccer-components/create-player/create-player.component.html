@@ -1,3 +1,20 @@
-<p>
-  create-player works!
-</p>
+<form [formGroup]="createPlayerForm" (ngSubmit)="onSubmit(createPlayerForm)">
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label for="player-name">Name:</label>
+      <input type="text"
+             id="player-name"
+             [formControl]="createPlayerForm.controls['player-name']"
+             placeholder="Player name"
+             class="form-control"
+      >
+      <label for="player-team">Team:</label>
+      <input type="text"
+             id="player-team"
+             [formControl]="createPlayerForm.controls['player-team']"
+             placeholder="Player team"
+             class="form-control"
+      >
+    </div>
+  </div>
+</form>
