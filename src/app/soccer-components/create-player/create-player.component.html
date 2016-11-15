@@ -15,6 +15,22 @@
              placeholder="Player team"
              class="form-control"
       >
+      <label for="player-position">Position:</label>
+      <input type="text"
+             id="player-position"
+             [formControl]="createPlayerForm.controls['player-position']"
+             placeholder="Player position"
+             class="form-control"
+      >
+      <label for="player-picture">Position:</label>
+      <input type="text"
+             id="player-picture"
+             [formControl]="createPlayerForm.controls['player-picture']"
+             placeholder="Player picture"
+             class="form-control"
+      >
+      <br/>
+      <button>Save</button>
     </div>
   </div>
 </form>

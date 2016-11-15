@@ -16,7 +16,9 @@ export class CreatePlayerComponent implements OnInit {
   ngOnInit() {
     this.createPlayerForm = this.fb.group({
       'player-name': [''],
-      'player-team': ['']
+      'player-team': [''],
+      'player-position': [''],
+      'player-picture': ['']
     })
   }
 
