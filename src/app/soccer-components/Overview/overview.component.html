@@ -1,7 +1,13 @@
-<ul>
-  <li><a routerLink="createplayer">Create Player</a></li>
-  <li><a routerLink="#">All players</a></li>
+<div class="row">
+  <div class="sidebar col-md-2">
+    <ul>
+      <li><a routerLink="createplayer">Create Player</a></li>
+      <li><a routerLink="#">All players</a></li>
+    </ul>
+  </div>
 
-</ul>
+  <div class="col-md-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 
-<router-outlet></router-outlet>
