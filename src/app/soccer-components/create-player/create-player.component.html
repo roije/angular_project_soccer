@@ -22,7 +22,7 @@
              placeholder="Player position"
              class="form-control"
       >
-      <label for="player-picture">Position:</label>
+      <label for="player-picture">Picture:</label>
       <input type="text"
              id="player-picture"
              [formControl]="createPlayerForm.controls['player-picture']"
@@ -30,7 +30,9 @@
              class="form-control"
       >
       <br/>
-      <button>Save</button>
+      <button class="btn btn-primary">Back</button>
+      <button class="btn btn-success">Save</button>
+      <button class="btn btn-danger">Delete</button>
     </div>
   </div>
 </form>
