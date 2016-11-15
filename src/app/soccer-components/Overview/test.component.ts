@@ -8,7 +8,7 @@ import {Component} from "@angular/core/src/metadata/directives";
 
 @Component({
   selector: 'test-component',
-  template: `<h1>Test component</h1>`
+  template: `<h1>Test component wdsflkjsdn nsdjkf njksdnf </h1>`
 })
 
 export class TestComponent{
