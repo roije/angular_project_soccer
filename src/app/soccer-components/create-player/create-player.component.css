@@ -12,4 +12,11 @@ label{
   margin-bottom: 2px;
 }
 
+.error-message{
+  color: #ff0000;
+}
+
+.error{
+  border-color: #ff0000;;
+}
 

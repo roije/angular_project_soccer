@@ -1,37 +1,70 @@
 <form class="col-md-6" [formGroup]="createPlayerForm" (ngSubmit)="onSubmit(createPlayerForm)">
   <div class="row">
     <div class="form-group">
-      <label for="player-name">Name:</label>
+      <label for="playername">Name:</label>
       <input type="text"
-             id="player-name"
-             [formControl]="createPlayerForm.controls['player-name']"
+             id="playername"
+             [formControl]="createPlayerForm.controls['playername']"
+             [class.error]="createPlayerForm.controls.playername.dirty && createPlayerForm.controls.playername.hasError('invalidLenght')"
              placeholder="Player name"
              class="form-control"
       >
-      <label for="player-team">Team:</label>
+
+      <div class="error-message" *ngIf="createPlayerForm.controls.playername.hasError('invalidLenght') &&
+                    createPlayerForm.controls.playername.touched" >
+        Name field is invalid. Minimum 3 characters and maximum 30 characters.
+      </div>
+
+      <div class="error-message" *ngIf="createPlayerForm.controls.playername.hasError('invalidChars') &&
+                    createPlayerForm.controls.playername.touched" >
+        Name field is invalid. Name must can't contain numbers.
+      </div>
+
+
+      <label for="playerteam">Team:</label>
       <input type="text"
-             id="player-team"
-             [formControl]="createPlayerForm.controls['player-team']"
+             id="playerteam"
+             [formControl]="createPlayerForm.controls['playerteam']"
+             [class.error]="createPlayerForm.controls.playerteam.dirty && createPlayerForm.controls.playerteam.hasError('invalidLenght')"
              placeholder="Player team"
              class="form-control"
       >
-      <label for="player-position">Position:</label>
+
+      <div class="error-message" *ngIf="createPlayerForm.controls.playerteam.hasError('invalidLenght') &&
+                    createPlayerForm.controls.playerteam.touched" >
+        Team field is invalid. Minimum 2 characters and maximum 30 characters.
+      </div>
+
+      <label for="playerposition">Position:</label>
       <input type="text"
-             id="player-position"
-             [formControl]="createPlayerForm.controls['player-position']"
+             id="playerposition"
+             [formControl]="createPlayerForm.controls['playerposition']"
+             [class.error]="createPlayerForm.controls.playerposition.touched && createPlayerForm.controls.playerposition.hasError('invalidChars')"
              placeholder="Player position"
              class="form-control"
       >
-      <label for="player-picture">Picture:</label>
+
+      <div class="error-message" *ngIf="createPlayerForm.controls.playerposition.hasError('invalidChars') &&
+                    createPlayerForm.controls.playerposition.touched" >
+        Position field is invalid. Position can't contain numbers.
+      </div>
+
+      <label for="playerpicture">Picture:</label>
       <input type="text"
-             id="player-picture"
-             [formControl]="createPlayerForm.controls['player-picture']"
+             id="playerpicture"
+             [formControl]="createPlayerForm.controls['playerpicture']"
              placeholder="Player picture"
              class="form-control"
       >
+
+      <div class="error-message" *ngIf="createPlayerForm.controls.playerpicture.hasError('invalidLink') &&
+                    createPlayerForm.controls.playerpicture.touched" >
+        Not a valid link
+      </div>
+
       <br/>
       <button class="btn btn-primary">Back</button>
-      <button class="btn btn-success">Save</button>
+      <button type="submit"  class="btn btn-success">Save</button>
       <button class="btn btn-danger">Delete</button>
     </div>
   </div>

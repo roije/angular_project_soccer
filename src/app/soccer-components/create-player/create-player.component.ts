@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder} from "@angular/forms";
+import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
+import {CreatePlayerValidators} from "./create-player.validators";
 
 @Component({
   selector: 'app-create-player',
@@ -15,10 +16,19 @@ export class CreatePlayerComponent implements OnInit {
 
   ngOnInit() {
     this.createPlayerForm = this.fb.group({
-      'player-name': [''],
-      'player-team': [''],
-      'player-position': [''],
-      'player-picture': ['']
+      'playername': ['', Validators.compose([
+        Validators.required, CreatePlayerValidators.getPlayerNameLengthValidator(),
+        CreatePlayerValidators.getCharsValidator()
+      ])],
+      'playerteam': ['', Validators.compose([
+        Validators.required, CreatePlayerValidators.getTeamNameLengthValidator()
+      ])],
+      'playerposition': ['', Validators.compose([
+        Validators.required, CreatePlayerValidators.getCharsValidator()
+      ])],
+      'playerpicture': ['', Validators.compose([
+        Validators.required, CreatePlayerValidators.getLinkValidator()
+      ])]
     })
   }
 
