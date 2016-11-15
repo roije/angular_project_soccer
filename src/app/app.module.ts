@@ -7,15 +7,17 @@ import { AppComponent } from './app.component';
 import {NavigationComponent} from "./navigation-component/navigation.comonent";
 import {RouterModule} from "@angular/router";
 import {routing} from "./app-routing.module";
-import {OverviewComponent} from "./soccer-components/overview.component";
-import {TestComponent} from "./soccer-components/test.component";
+import {OverviewComponent} from "./soccer-components/Overview/overview.component";
+import {TestComponent} from "./soccer-components/Overview/test.component";
+import { CreatePlayerComponent } from './soccer-components/create-player/create-player.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     OverviewComponent,
-    TestComponent
+    TestComponent,
+    CreatePlayerComponent
   ],
   imports: [
     BrowserModule,

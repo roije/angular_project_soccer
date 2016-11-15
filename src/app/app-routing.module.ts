@@ -1,7 +1,8 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {OverviewComponent} from "./soccer-components/overview.component";
-import {TestComponent} from "./soccer-components/test.component";
+import {OverviewComponent} from "./soccer-components/Overview/overview.component";
+import {TestComponent} from "./soccer-components/Overview/test.component";
+import {CreatePlayerComponent} from "./soccer-components/create-player/create-player.component";
 
 const routes: Routes = [
   {
@@ -12,7 +13,11 @@ const routes: Routes = [
 
   {
     path: 'players',
-    component: OverviewComponent
+    component: OverviewComponent,
+    children: [
+      {path: '' },
+      {path: 'createplayer', component: CreatePlayerComponent}
+    ]
   },
 
   {

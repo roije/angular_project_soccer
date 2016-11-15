@@ -5,7 +5,9 @@ import {Component} from "@angular/core/src/metadata/directives";
 
 @Component({
   selector: 'overview-component',
-  templateUrl: './overview.component.html'
+  templateUrl: 'overview.component.html',
+  styleUrls: ['./overview.component.css']
+
 })
 
 export class OverviewComponent{
