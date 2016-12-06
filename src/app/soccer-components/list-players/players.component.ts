@@ -22,8 +22,8 @@ export class PlayersComponent {
     this.players = players;
   }
 
-  goToPlayer(player: any) : void {
-    let link = ['/playerdetails/', player.id];
+  goToPlayer(player: Player) : void {
+    let link = ['players/playerdetails', player.id];
     this.router.navigate(link);
 
   }

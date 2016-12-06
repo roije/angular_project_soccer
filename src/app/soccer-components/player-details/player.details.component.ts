@@ -15,9 +15,11 @@ import {Player} from "../../Entity/player.entity";
 
 export class PlayerDetailComponent implements OnInit{
 
-  private players: Player[];
 
-  constructor(private selectedPlayer : Player, private router: Router, private route: ActivatedRoute)
+  private players: Player[];
+  private selectedPlayer : Player;
+
+  constructor(private router: Router, private route: ActivatedRoute)
   {
     this.players = players;
   }
@@ -25,7 +27,8 @@ export class PlayerDetailComponent implements OnInit{
   ngOnInit() {
     this.route.params.forEach((params : Params) => {
       let id = params['id'];
-      console.log(id);
+      this.selectedPlayer = players.find((player) => player.id === id);
+      console.log(this.selectedPlayer);
     })
   }
 
