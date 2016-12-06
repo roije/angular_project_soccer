@@ -1,6 +1,5 @@
   <div *ngFor="let player of players">
-    <a routerLink="details"><div class="col-lg-2 player-div" [ngStyle]="{'background-image' : 'url(' + player.picture + ')'}">
-
-      <p class="player-name">{{player.name}}</p>
+    <a (click)="goToPlayer(player)"><div class="col-lg-2 player-div" [ngStyle]="{'background-image' : 'url(' + player.picture + ')'}">
+      <button (click)="goToPlayer(player)"></button>
     </div></a>
   </div>

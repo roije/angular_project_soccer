@@ -1,13 +1,16 @@
+import {Player} from "./Entity/player.entity";
 /**
  * Created by roije on 06/12/2016.
  */
-export const players: any[] = [
+export const players: Player[] = [
+  new Player("first","Christiano Ronaldo", "Real Madrid", "LM", "http://futhead.cursecdn.com/static/img/17/players/20801.png"),
   {
+    id : "second",
     name : "Cristiano Ronaldo",
     team : "Real Madrid",
     position: "LM",
     picture: "http://futhead.cursecdn.com/static/img/17/players/20801.png"
-  },
+  }/*,
   {
     name : "Gareth Bale",
     team : "Real Madrid",
@@ -62,5 +65,6 @@ export const players: any[] = [
     position: "LCF",
     picture: "http://futhead.cursecdn.com/static/img/17/players/184941.png"
   }
+  */
 ];
 

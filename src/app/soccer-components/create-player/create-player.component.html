@@ -16,7 +16,8 @@
       </div>
 
       <div class="error-message" *ngIf="createPlayerForm.controls.playername.hasError('invalidChars') &&
-                    createPlayerForm.controls.playername.touched" >
+                    createPlayerForm.controls.playername.touched"
+      >
         Name field is invalid. Name must can't contain numbers.
       </div>
 

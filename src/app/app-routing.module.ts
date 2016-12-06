@@ -4,6 +4,7 @@ import {OverviewComponent} from "./soccer-components/Overview/overview.component
 import {TestComponent} from "./soccer-components/Overview/test.component";
 import {CreatePlayerComponent} from "./soccer-components/create-player/create-player.component";
 import {PlayersComponent} from "./soccer-components/list-players/players.component";
+import {PlayerDetailComponent} from "./soccer-components/player-details/player.details.component";
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
       {path: '' },
       {path: 'createplayer', component: CreatePlayerComponent},
       {path: 'listplayers', component: PlayersComponent},
+      {path: 'playerdetails/:id', component: PlayerDetailComponent},
     ]
   },
 

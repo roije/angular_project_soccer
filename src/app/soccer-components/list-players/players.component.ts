@@ -5,6 +5,8 @@
 import {players} from '../../mock-players';
 
 import {Component} from "@angular/core/src/metadata/directives";
+import {Player} from "../../Entity/player.entity";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'players-componenent',
@@ -16,7 +18,15 @@ export class PlayersComponent {
 
   private players = [];
 
-  constructor(){
+  constructor(private router: Router){
     this.players = players;
   }
+
+  goToPlayer(player: any) : void {
+    let link = ['/playerdetails/', player.id];
+    this.router.navigate(link);
+
+  }
+
+
 }
