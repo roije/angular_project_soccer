@@ -1,0 +1,6 @@
+  <div *ngFor="let player of players">
+    <a routerLink="details"><div class="col-lg-2 player-div" [ngStyle]="{'background-image' : 'url(' + player.picture + ')'}">
+
+      <p class="player-name">{{player.name}}</p>
+    </div></a>
+  </div>

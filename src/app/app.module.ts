@@ -10,6 +10,7 @@ import {routing} from "./app-routing.module";
 import {OverviewComponent} from "./soccer-components/Overview/overview.component";
 import {TestComponent} from "./soccer-components/Overview/test.component";
 import { CreatePlayerComponent } from './soccer-components/create-player/create-player.component';
+import {PlayersComponent} from "./soccer-components/list-players/players.component";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CreatePlayerComponent } from './soccer-components/create-player/create-
     NavigationComponent,
     OverviewComponent,
     TestComponent,
-    CreatePlayerComponent
+    CreatePlayerComponent,
+    PlayersComponent
   ],
   imports: [
     BrowserModule,
