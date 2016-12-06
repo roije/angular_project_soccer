@@ -40,4 +40,5 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 * Basics and form validation (IN PROGRESS)
 * Subrouting ✓
 * CRUD (-)
+* Unit testing (-)
 * Make the webpage presentable (Final step) (-)
