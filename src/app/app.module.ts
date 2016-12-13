@@ -12,6 +12,7 @@ import {TestComponent} from "./soccer-components/Overview/test.component";
 import { CreatePlayerComponent } from './soccer-components/create-player/create-player.component';
 import {PlayersComponent} from "./soccer-components/list-players/players.component";
 import {PlayerDetailComponent} from "./soccer-components/player-details/player.details.component";
+import {PlayerService} from "./services/player.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import {PlayerDetailComponent} from "./soccer-components/player-details/player.d
     routing,
     ReactiveFormsModule // Form listener for changes (https://scotch.io/tutorials/using-angular-2s-model-driven-forms-with-formgroup-and-formcontrol)
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

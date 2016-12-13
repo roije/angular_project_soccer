@@ -2,17 +2,17 @@
  * Created by christianhasselstrom on 06/12/2016.
  */
 export class Player {
-  id: string;
+  _id: string;
   name: string;
-  team: string;
+  clubId: string;
   position: string;
-  picture: string;
+  image: string;
 
-  constructor(id : string, name : string, team : string, position : string, picture : string) {
-    this.id = id;
+  constructor(id : string, name : string, clubId : string, position : string, image : string) {
+    this._id = id;
     this.name = name;
-    this.team = team;
+    this.clubId = clubId;
     this.position = position;
-    this.picture = picture;
+    this.image = image;
   }
 }

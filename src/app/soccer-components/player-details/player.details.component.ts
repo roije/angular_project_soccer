@@ -1,6 +1,5 @@
 
 
-import {players} from '../../mock-players';
 
 import {Component} from "@angular/core/src/metadata/directives";
 import {OnInit} from "@angular/core";
@@ -21,13 +20,13 @@ export class PlayerDetailComponent implements OnInit{
 
   constructor(private router: Router, private route: ActivatedRoute)
   {
-    this.players = players;
+
   }
 
   ngOnInit() {
     this.route.params.forEach((params : Params) => {
       let id = params['id'];
-      this.selectedPlayer = players.find((player) => player.id === id);
+      //this.selectedPlayer = players.find((player) => player.id === id);
       console.log(this.selectedPlayer);
     })
   }
