@@ -30,16 +30,29 @@ export class PlayerService{
       })
     .catch(this.handleError);
   }
-/*
+
   public getDetailedPlayer(id: string) : Player {
     let player = this.players.find(player => player._id === id);
     if(player) {
-
+      return this.copyPlayerObject(player);
     }
 
-    return <Player> {player : {} };
+    return <Player>{}; //<- det er giver ikke mening
   }
-*/
+
+
+  public updatePlayer(player): Observable<string> {
+    let options = this.getOptionsObject();
+
+    return this.http.put(this.url + "/" + player._id, player, options)
+      .map((res: Response) => {
+        let index = this.find(player._id);
+        this.players[index] = player;
+      })
+      .catch(this.handleError);
+  }
+
+
 
   public createPlayer(player): Observable<Player> {
     let options = this.getOptionsObject();
@@ -59,6 +72,20 @@ export class PlayerService{
   private getOptionsObject(): RequestOptions {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     return new RequestOptions({ headers: headers });
+  }
+
+  private copyPlayerObject(playerToCopy: Player): Player {
+    let player = Object.assign({}, playerToCopy);
+    return player;
+  }
+
+  private find(id: string): number {
+    for(let i=0; i < this.players.length; i++) {
+      if (this.players[i]._id === id) {
+        return i;
+      }
+    }
+    return -1;
   }
 
 
