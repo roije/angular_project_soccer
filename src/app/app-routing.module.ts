@@ -21,7 +21,9 @@ const routes: Routes = [
       {path: 'createplayer', component: CreatePlayerComponent},
       {path: 'listplayers', component: PlayersComponent},
       {path: 'playerdetails/:id', component: PlayerDetailComponent},
-    ]
+      { path: 'editplayer/:id', component: CreatePlayerComponent
+      }
+    ],
   },
 
   {

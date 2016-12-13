@@ -3,6 +3,7 @@ import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CreatePlayerValidators} from "./create-player.validators";
 import {PlayerService} from "../../services/player.service";
+import {Player} from "../../Entity/player.entity";
 
 @Component({
   selector: 'app-create-player',
@@ -12,6 +13,7 @@ import {PlayerService} from "../../services/player.service";
 export class CreatePlayerComponent implements OnInit {
 
   createPlayerForm: FormGroup;
+  private selectedPlayer: Player;
 
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private playerservice : PlayerService,
               private router : Router) { }
