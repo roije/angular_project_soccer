@@ -37,7 +37,7 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 * git				✓
 * Bootstrap			✓
 * Routing - singlepage            ✓
-* Basics and form validation (IN PROGRESS)
+* Basics and form validation ✓
 * Subrouting ✓
 * CRUD (-)
 * Unit testing (-)
