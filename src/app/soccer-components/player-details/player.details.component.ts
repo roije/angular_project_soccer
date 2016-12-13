@@ -5,6 +5,7 @@ import {Component} from "@angular/core/src/metadata/directives";
 import {OnInit} from "@angular/core";
 import {Router, ActivatedRoute, Params} from "@angular/router";
 import {Player} from "../../Entity/player.entity";
+import {PlayerService} from "../../services/player.service";
 
 @Component({
   selector: 'player-details',
@@ -15,10 +16,9 @@ import {Player} from "../../Entity/player.entity";
 export class PlayerDetailComponent implements OnInit{
 
 
-  private players: Player[];
   private selectedPlayer : Player;
 
-  constructor(private router: Router, private route: ActivatedRoute)
+  constructor(private router: Router, private route: ActivatedRoute, private playerService : PlayerService)
   {
 
   }
@@ -26,7 +26,7 @@ export class PlayerDetailComponent implements OnInit{
   ngOnInit() {
     this.route.params.forEach((params : Params) => {
       let id = params['id'];
-      //this.selectedPlayer = players.find((player) => player.id === id);
+      this.selectedPlayer = this.playerService.getAllLocalPlayers().find((player) => player._id === id);
       console.log(this.selectedPlayer);
     })
   }

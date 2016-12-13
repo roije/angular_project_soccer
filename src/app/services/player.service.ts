@@ -11,7 +11,7 @@ import {create} from "domain";
 export class PlayerService{
 
   private players: Player[];
-  private url: string = "http://localhost:3000/players";
+  private url: string = "http://soccers.herokuapp.com/players";
 
   constructor(private http : Http){
 
