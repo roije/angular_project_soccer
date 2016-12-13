@@ -57,13 +57,28 @@ export class PlayerService{
 
 
   public createPlayer(player): Observable<Player> {
+
+
+
+    console.log("Kommer før")
+
     let options = this.getOptionsObject();
+
+
     return this.http.post(this.url, player, options)
       .map((res: Response) => {
       let createdPlayer = res.json();
-        this.getAllRemotePlayers().subscribe(
-          () => this.players.push(createdPlayer)
-        )
+      if(!this.players)
+        {
+          this.getAllRemotePlayers().subscribe(
+            () => this.players.push(createdPlayer)
+          );
+
+        }
+        else {
+        this.players.push(createdPlayer);
+      }
+
       })
       .catch(this.handleError);
 
