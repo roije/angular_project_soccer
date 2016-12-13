@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router, Params} from "@angular/router";
 import {CreatePlayerValidators} from "./create-player.validators";
 import {PlayerService} from "../../services/player.service";
 import {Player} from "../../Entity/player.entity";
@@ -19,6 +19,21 @@ export class CreatePlayerComponent implements OnInit {
               private router : Router) { }
 
   ngOnInit() {
+    this.route.params.forEach((params: Params) => {
+      this.selectedPlayer = new Player("","","","","");
+
+      let id = params['id'];
+      console.log(id);
+      if(id) {
+        console.log("her")
+        this.selectedPlayer = Object.assign({}, this.playerservice.getDetailedPlayer(id));
+
+      }
+
+      console.log(this.selectedPlayer);
+
+    });
+
     this.createPlayerForm = this.fb.group({
       'playername': ['', Validators.compose([
         Validators.required, CreatePlayerValidators.getPlayerNameLengthValidator(),

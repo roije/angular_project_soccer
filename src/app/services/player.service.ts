@@ -32,9 +32,11 @@ export class PlayerService{
   }
 
   public getDetailedPlayer(id: string) : Player {
-    let player = this.players.find(player => player._id === id);
-    if(player) {
-      return this.copyPlayerObject(player);
+    if(this.players) {
+      let player = this.players.find(player => player._id === id);
+      if (player) {
+        return this.copyPlayerObject(player);
+      }
     }
 
     return <Player>{}; //<- det er giver ikke mening
@@ -80,11 +82,14 @@ export class PlayerService{
   }
 
   private find(id: string): number {
-    for(let i=0; i < this.players.length; i++) {
-      if (this.players[i]._id === id) {
-        return i;
+    if(id !== '') {
+      for (let i = 0; i < this.players.length; i++) {
+        if (this.players[i]._id === id) {
+          return i;
+        }
       }
     }
+
     return -1;
   }
 

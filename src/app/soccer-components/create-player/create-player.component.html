@@ -4,6 +4,7 @@
       <label for="playername">Name:</label>
       <input type="text"
              id="playername"
+             [(ngModel)]="selectedPlayer.name"
              [formControl]="createPlayerForm.controls['playername']"
              [class.error]="createPlayerForm.controls.playername.dirty && createPlayerForm.controls.playername.hasError('invalidLenght')"
              placeholder="Player name"
@@ -25,6 +26,7 @@
       <label for="playerteam">Team:</label>
       <input type="text"
              id="playerteam"
+             [(ngModel)]="selectedPlayer.team"
              [formControl]="createPlayerForm.controls['playerteam']"
              [class.error]="createPlayerForm.controls.playerteam.dirty && createPlayerForm.controls.playerteam.hasError('invalidLenght')"
              placeholder="Player team"
@@ -39,6 +41,7 @@
       <label for="playerposition">Position:</label>
       <input type="text"
              id="playerposition"
+             [(ngModel)]="selectedPlayer.position"
              [formControl]="createPlayerForm.controls['playerposition']"
              [class.error]="createPlayerForm.controls.playerposition.touched && createPlayerForm.controls.playerposition.hasError('invalidChars')"
              placeholder="Player position"
@@ -53,6 +56,7 @@
       <label for="playerpicture">Picture:</label>
       <input type="text"
              id="playerpicture"
+             [(ngModel)]="selectedPlayer.picture"
              [formControl]="createPlayerForm.controls['playerpicture']"
              placeholder="Player picture"
              class="form-control"
