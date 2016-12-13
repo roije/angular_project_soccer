@@ -47,7 +47,7 @@ export class PlayerService{
       .map((res: Response) => {
       let createdPlayer = res.json();
       this.players.push(createdPlayer);
-    })
+      })
       .catch(this.handleError);
 
   }
