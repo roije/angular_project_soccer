@@ -20,15 +20,10 @@ export class CreatePlayerComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
-      this.selectedPlayer = new Player("","","","","");
 
       let id = params['id'];
-      console.log(id);
-      if(id) {
-        console.log("her")
-        this.selectedPlayer = Object.assign({}, this.playerservice.getDetailedPlayer(id));
+      this.selectedPlayer = Object.assign({}, this.playerservice.getDetailedPlayer(id));
 
-      }
 
       console.log(this.selectedPlayer);
 
@@ -52,17 +47,31 @@ export class CreatePlayerComponent implements OnInit {
   }
 
   onSubmit(createPlayerForm) {
+
+
     if(createPlayerForm.valid) {
-      console.log("valid");
-      var player = {
-        name : createPlayerForm.controls.playername.value,
-        team : createPlayerForm.controls.playerteam.value,
-        position : createPlayerForm.controls.playerposition.value,
-        picture : createPlayerForm.controls.playerpicture.value
-      };
-      this.playerservice.createPlayer(player).subscribe(
-        () => this.goToPlayerList()
-      );
+
+      if(this.selectedPlayer._id){
+        this.playerservice.updatePlayer(this.selectedPlayer).subscribe(
+          () => this.goToPlayerList()
+        )
+      }
+
+      else {
+
+        var player = {
+          name : createPlayerForm.controls.playername.value,
+          team : createPlayerForm.controls.playerteam.value,
+          position : createPlayerForm.controls.playerposition.value,
+          picture : createPlayerForm.controls.playerpicture.value
+        };
+        console.log(player);
+        this.playerservice.createPlayer(player).subscribe(
+          () => this.goToPlayerList()
+        );
+
+      }
+
     }
     else{
       console.log("invalid")

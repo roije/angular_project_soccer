@@ -38,8 +38,8 @@ export class PlayerService{
         return this.copyPlayerObject(player);
       }
     }
-
-    return <Player>{}; //<- det er giver ikke mening
+      //return <Player>{{}};
+    return <Player>{ name : '', team : '', position : '', picture : '' }; //<- det er giver ikke mening
   }
 
 
@@ -61,14 +61,16 @@ export class PlayerService{
     return this.http.post(this.url, player, options)
       .map((res: Response) => {
       let createdPlayer = res.json();
-      this.players.push(createdPlayer);
+        this.getAllRemotePlayers().subscribe(
+          () => this.players.push(createdPlayer)
+        )
       })
       .catch(this.handleError);
 
   }
 
   public handleError(error: Response | any) {
-    return Observable.throw("Problem with request");
+    return Observable.throw(error);
   }
 
   private getOptionsObject(): RequestOptions {
