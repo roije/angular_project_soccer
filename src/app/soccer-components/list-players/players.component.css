@@ -18,3 +18,11 @@
 .player-name{
   margin-bottom: 10px;
 }
+
+@media (max-width: 768px) {
+  #test {
+    text-align: center;
+    background-position:center;
+
+  }
+}
