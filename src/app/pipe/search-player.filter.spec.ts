@@ -25,18 +25,42 @@ describe('App: Players', () => {
 
   describe('PlayerFilter', () => {
     let pipe = new PlayerFilter();
+
     it('Search is empty should return all players', () => {
       let result = pipe.transform(this.players, '');
       expect(result.length).toBe(this.players.length);
-    })
+    });
+
     it('Length should be 8', () => {
       let result = pipe.transform(this.players, '');
       expect(result.length).toBe(8);
-    })
+    });
+
     it('partial match on team name', () => {
       let result = pipe.transform(this.players, 'vil');
       expect(result.length).toBe(2);
+    });
+
+    it('Exact match on team name - test case insensitive', () => {
+      let result = pipe.transform(this.players, 'DaNmArK');
+      expect(result.length).toBe(1);
+    });
+
+    it('Exact match on players name - test case insensitive', () => {
+      let result = pipe.transform(this.players, 'ronALDO');
+      expect(result.length).toBe(1);
+    });
+
+    it('Partial match on players name - test case insensitive', () => {
+      let result = pipe.transform(this.players, 'ronAL');
+      expect(result.length).toBe(1);
+    });
+
+    it('Should return an array with one element that is -1, because no match is found', () => {
+      let result = pipe.transform(this.players, "Bob");
+      expect(result[0]).toBe(-1);
     })
+
   })
 
 })
