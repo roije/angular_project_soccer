@@ -7,6 +7,7 @@ import {Player} from "../../Entity/player.entity";
 import {Router} from "@angular/router";
 import {PlayerService} from "../../services/player.service";
 import {OnInit} from "@angular/core";
+import {PlayerFilter} from '../../pipe/search-player.filter';
 
 @Component({
   selector: 'players-componenent',

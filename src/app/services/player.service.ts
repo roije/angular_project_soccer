@@ -58,10 +58,6 @@ export class PlayerService{
 
   public createPlayer(player): Observable<Player> {
 
-
-
-    console.log("Kommer før")
-
     let options = this.getOptionsObject();
 
 
@@ -82,6 +78,19 @@ export class PlayerService{
       })
       .catch(this.handleError);
 
+  }
+
+
+  public deletePlayer(id: string) : Observable<string> {
+    let options = this.getOptionsObject;
+
+    return this.http.delete(this.url + "/" + id, options)
+      .map((res: Response) => {
+        let index = this.find(id);
+        //Find player in local array by index and remove 1 (the player found)
+        this.players.splice(index, 1);
+      })
+      .catch(this.handleError);
   }
 
   public handleError(error: Response | any) {

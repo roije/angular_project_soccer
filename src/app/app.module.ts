@@ -13,6 +13,7 @@ import { CreatePlayerComponent } from './soccer-components/create-player/create-
 import {PlayersComponent} from "./soccer-components/list-players/players.component";
 import {PlayerDetailComponent} from "./soccer-components/player-details/player.details.component";
 import {PlayerService} from "./services/player.service";
+import {PlayerFilter} from "./pipe/search-player.filter";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {PlayerService} from "./services/player.service";
     TestComponent,
     CreatePlayerComponent,
     PlayersComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    PlayerFilter
   ],
   imports: [
     BrowserModule,

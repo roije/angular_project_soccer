@@ -31,4 +31,14 @@ export class PlayerDetailComponent implements OnInit{
     })
   }
 
+  deletePlayer() : void {
+    this.playerService.deletePlayer(this.selectedPlayer._id).subscribe(
+      () => this.goToPlayerList()
+    )
+  }
+
+  private goToPlayerList() : void {
+    this.router.navigate(['/players/listplayers'])
+  }
+
 }

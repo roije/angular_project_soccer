@@ -78,6 +78,10 @@ export class CreatePlayerComponent implements OnInit {
     }
   }
 
+  printPlayer() : void {
+    console.log(this.selectedPlayer);
+  }
+
   private goToPlayerList() : void {
     this.router.navigate(['/players/listplayers'])
   }

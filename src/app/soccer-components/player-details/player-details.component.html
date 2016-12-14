@@ -8,5 +8,6 @@
   <h3>Portrait</h3>
   <img src="{{selectedPlayer.picture}}"/>
   <a routerLink="/players/editplayer/{{selectedPlayer._id}}" class ="btn btn-primary">Edit</a>
+  <button class="btn btn-danger" (click)="deletePlayer()">Delete player</button>
 </div>
 

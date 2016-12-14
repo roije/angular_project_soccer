@@ -1,4 +1,4 @@
-<form class="col-md-6" [formGroup]="createPlayerForm" (ngSubmit)="onSubmit(createPlayerForm)">
+<form class="col-md-6" (keydown)="printPlayer()" [formGroup]="createPlayerForm" (ngSubmit)="onSubmit(createPlayerForm)">
   <div class="row">
     <div class="form-group">
       <label for="playername">Name:</label>
