@@ -29,6 +29,14 @@ describe('App: Players', () => {
       let result = pipe.transform(this.players, '');
       expect(result.length).toBe(this.players.length);
     })
+    it('Length should be 8', () => {
+      let result = pipe.transform(this.players, '');
+      expect(result.length).toBe(8);
+    })
+    it('partial match on team name', () => {
+      let result = pipe.transform(this.players, 'vil');
+      expect(result.length).toBe(2);
+    })
   })
 
 })

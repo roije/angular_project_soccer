@@ -9,7 +9,15 @@
    color: #fff;
    -webkit-filter: grayscale();
    -webkit-filter: brightness(50%);
+  background-position: center;
  }
+
+/*
+@media (max-width 768px) {
+  #allPlayers {
+    background-position: center
+  }
+}*/
 
 .player-div:hover{
   -webkit-filter: blur(0);
@@ -17,14 +25,6 @@
 
 .player-name{
   margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-  #test {
-    text-align: center;
-    background-position:center;
-
-  }
 }
 
 .search-field{

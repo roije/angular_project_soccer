@@ -13,9 +13,9 @@ export class PlayerFilter implements PipeTransform{
   transform(items: Player[], args: string): any {
     console.log(args);
     if(args && items.length > 0) {
-      console.log("halllo");
       let itemsFound = items.filter(
-        item => item.name.toLowerCase().includes(args.toLowerCase())
+            item => item.name.toLowerCase().includes(args.toLowerCase())
+        ||  item.team.toLowerCase().includes(args.toLowerCase())
       );
 
       if(itemsFound && itemsFound.length > 0) {
